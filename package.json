@@ -1,0 +1,17 @@
+{
+  "name": "lastfm-api-client",
+  "version": "1.0.0",
+  "description": "A LastFM client written in Typescript",
+  "main": "index.js",
+  "repository": "https://github.com/ansango/lastfm-api-client.git",
+  "author": "Anibal Santos",
+  "license": "MIT",
+  "devDependencies": {
+    "cz-conventional-changelog": "^3.3.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
