@@ -1,9 +1,4 @@
 export const method = {
-  auth: {
-    // getMobileSession: "auth.getMobileSession",
-    // getSession: "auth.getSession",
-    // getToken: "auth.getToken",
-  },
   user: {
     getFriends: "user.getFriends",
     getInfo: "user.getInfo",
@@ -20,38 +15,30 @@ export const method = {
     getWeeklyTrackChart: "user.getWeeklyTrackChart",
   },
   track: {
-    // addTags: "track.addTags",
     getCorrection: "track.getCorrection",
     getInfo: "track.getInfo",
     getSimilar: "track.getSimilar",
     getTags: "track.getTags",
     getTopTags: "track.getTopTags",
-    // love: "track.love",
-    // removeTag: "track.removeTag",
-    // scrobble: "track.scrobble",
     search: "track.search",
-    // unlove: "track.unlove",
-    // updateNowPlaying: "track.updateNowPlaying",
   },
   album: {
-    // addTags: "album.addTags",
     getInfo: "album.getInfo",
     getTags: "album.getTags",
-    // removeTag: "album.removeTag",
     search: "album.search",
   },
   artist: {
-    // addTags: "artist.addTags",
     getCorrection: "artist.getCorrection",
     getInfo: "artist.getInfo",
     getTags: "artist.getTags",
     getTopAlbums: "artist.getTopAlbums",
     getTopTags: "artist.getTopTags",
     getTopTracks: "artist.getTopTracks",
-    // removeTag: "artist.removeTag",
     search: "artist.search",
   },
-  library: {},
+  library: {
+    getArtists: "library.getArtists",
+  },
   tag: {
     getInfo: "tag.getInfo",
     getTopArtists: "tag.getTopArtists",

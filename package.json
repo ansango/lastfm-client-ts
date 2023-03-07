@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A LastFM client written in Typescript",
   "main": "./dist",
+  "types": "./dist/types/index.d.ts",
   "scripts": {
     "build": "rimraf dist && tsc",
     "clean": "rimraf dist",

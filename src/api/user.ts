@@ -1,14 +1,12 @@
 import { method } from "../method";
+
 import type {
-  UserApiMethods,
   UserGetFriendsRequest,
   UserGetFriendsResponse,
   UserGetInfoRequest,
   UserGetInfoResponse,
   UserGetLovedTracksRequest,
   UserGetLovedTracksResponse,
-  UserGetPersonalTagsRequest,
-  UserGetPersonalTagsResponse,
   UserGetRecentTracksRequest,
   UserGetRecentTracksResponse,
   UserGetTopAlbumsRequest,
@@ -27,9 +25,46 @@ import type {
   UserGetWeeklyChartListResponse,
   UserGetWeeklyTrackChartRequest,
   UserGetWeeklyTrackChartResponse,
-} from "../types";
+} from "../types/user";
 
 import { buildUrl, fetcher } from "../utils";
+
+export type UserApiMethods = {
+  getFriends: (
+    params: UserGetFriendsRequest
+  ) => Promise<UserGetFriendsResponse>;
+  getInfo: (params: UserGetInfoRequest) => Promise<UserGetInfoResponse>;
+  getLovedTracks: (
+    params: UserGetLovedTracksRequest
+  ) => Promise<UserGetLovedTracksResponse>;
+  getRecentTracks: (
+    params: UserGetRecentTracksRequest
+  ) => Promise<UserGetRecentTracksResponse>;
+  getTopAlbums: (
+    params: UserGetTopAlbumsRequest
+  ) => Promise<UserGetTopAlbumsResponse>;
+  getTopArtists: (
+    params: UserGetTopArtistsRequest
+  ) => Promise<UserGetTopArtistsResponse>;
+  getTopTags: (
+    params: UserGetTopTagsRequest
+  ) => Promise<UserGetTopTagsResponse>;
+  getTopTracks: (
+    params: UserGetTopTracksRequest
+  ) => Promise<UserGetTopTracksResponse>;
+  getWeeklyAlbumChart: (
+    params: UserGetWeeklyAlbumChartRequest
+  ) => Promise<UserGetWeeklyAlbumChartResponse>;
+  getWeeklyArtistChart: (
+    params: UserGetWeeklyArtistChartRequest
+  ) => Promise<UserGetWeeklyArtistChartResponse>;
+  getWeeklyChartList: (
+    params: UserGetWeeklyChartListRequest
+  ) => Promise<UserGetWeeklyChartListResponse>;
+  getWeeklyTrackChart: (
+    params: UserGetWeeklyTrackChartRequest
+  ) => Promise<UserGetWeeklyTrackChartResponse>;
+};
 
 export const userApiMethods: UserApiMethods = {
   getFriends: (params: UserGetFriendsRequest, init?: RequestInit) =>
@@ -45,11 +80,6 @@ export const userApiMethods: UserApiMethods = {
   getLovedTracks: (params: UserGetLovedTracksRequest, init?: RequestInit) =>
     fetcher<UserGetLovedTracksResponse>(
       buildUrl(method.user.getLovedTracks, { ...params }),
-      init
-    ),
-  getPersonalTags: (params: UserGetPersonalTagsRequest, init?: RequestInit) =>
-    fetcher<UserGetPersonalTagsResponse>(
-      buildUrl(method.user.getPersonalTags, { ...params }),
       init
     ),
   getRecentTracks: (params: UserGetRecentTracksRequest, init?: RequestInit) =>
