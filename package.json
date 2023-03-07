@@ -1,29 +1,31 @@
 {
   "name": "lastfm-client-api",
-  "version": "1.0.2",
+  "version": "1.0.0",
   "description": "A LastFM client written in Typescript",
   "main": "./dist",
-  "types": "./dist/types/index.d.ts",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "build": "rimraf dist && tsc",
     "clean": "rimraf dist",
     "dev": "npm run clean && tsc --watch --project tsconfig.dev.json"
   },
-  "repository": "https://github.com/ansango/lastfm-api-client.git",
+  "repository": "https://github.com/ansango/lastfm-client-api.git",
   "author": "Anibal Santos",
   "license": "MIT",
   "keywords": [
     "client",
-    "lastFm",
+    "last-fm",
     "nodejs",
     "typescript",
     "node"
   ],
+  "dependencies": {
+    "cross-fetch": "^3.1.5",
+    "dotenv": "^16.0.3"
+  },
   "devDependencies": {
     "@types/node": "^18.14.6",
-    "cross-fetch": "^3.1.5",
     "cz-conventional-changelog": "^3.3.0",
-    "dotenv": "^16.0.3",
     "rimraf": "^4.3.1",
     "typescript": "^4.9.5"
   },
@@ -31,5 +33,9 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "peerDependencies": {
+    "cross-fetch": "^3.1.5",
+    "dotenv": "^16.0.3"
   }
 }

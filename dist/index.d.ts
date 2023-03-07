@@ -12,3 +12,4 @@ export declare const lastFmClient: () => {
     };
     userApiMethods: import("./api").UserApiMethods;
 };
+export * from "./types";

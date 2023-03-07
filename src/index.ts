@@ -4,3 +4,5 @@ import { userApiMethods } from "./api";
 export const lastFmClient = () => {
   return { config, userApiMethods };
 };
+
+export * from "./types";
