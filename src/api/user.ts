@@ -72,7 +72,8 @@ export type UserApiMethods = {
    * https://www.last.fm/api/show/user.getRecentTracks
    */
   getRecentTracks: (
-    params: UserGetRecentTracksRequest
+    params: UserGetRecentTracksRequest,
+    init?: RequestInit
   ) => Promise<UserGetRecentTracksResponse>;
   /**
    * Fetches a list of the user's top albums
@@ -82,7 +83,8 @@ export type UserApiMethods = {
    * https://www.last.fm/api/show/user.getTopAlbums
    */
   getTopAlbums: (
-    params: UserGetTopAlbumsRequest
+    params: UserGetTopAlbumsRequest,
+    init?: RequestInit
   ) => Promise<UserGetTopAlbumsResponse>;
   /**
    * Fetches a list of the user's top artists
@@ -92,7 +94,8 @@ export type UserApiMethods = {
    * https://www.last.fm/api/show/user.getTopArtists
    */
   getTopArtists: (
-    params: UserGetTopArtistsRequest
+    params: UserGetTopArtistsRequest,
+    init?: RequestInit
   ) => Promise<UserGetTopArtistsResponse>;
   /**
    * Fetches a list of the user's top tags
@@ -102,7 +105,8 @@ export type UserApiMethods = {
    * https://www.last.fm/api/show/user.getTopTags
    */
   getTopTags: (
-    params: UserGetTopTagsRequest
+    params: UserGetTopTagsRequest,
+    init?: RequestInit
   ) => Promise<UserGetTopTagsResponse>;
   /**
    * Fetches a list of the user's top tracks
@@ -112,7 +116,8 @@ export type UserApiMethods = {
    * https://www.last.fm/api/show/user.getTopTracks
    */
   getTopTracks: (
-    params: UserGetTopTracksRequest
+    params: UserGetTopTracksRequest,
+    init?: RequestInit
   ) => Promise<UserGetTopTracksResponse>;
   /**
    * Fetches a list of the user's chart albums for a given week
@@ -122,7 +127,8 @@ export type UserApiMethods = {
    * https://www.last.fm/api/show/user.getWeeklyAlbumChart
    */
   getWeeklyAlbumChart: (
-    params: UserGetWeeklyAlbumChartRequest
+    params: UserGetWeeklyAlbumChartRequest,
+    init?: RequestInit
   ) => Promise<UserGetWeeklyAlbumChartResponse>;
   /**
    * Fetches a list of the user's chart artists for a given week
@@ -132,7 +138,8 @@ export type UserApiMethods = {
    * https://www.last.fm/api/show/user.getWeeklyArtistChart
    */
   getWeeklyArtistChart: (
-    params: UserGetWeeklyArtistChartRequest
+    params: UserGetWeeklyArtistChartRequest,
+    init?: RequestInit
   ) => Promise<UserGetWeeklyArtistChartResponse>;
   /**
    * Fetches a list of the user's chart lists for a given week
@@ -142,7 +149,8 @@ export type UserApiMethods = {
    * https://www.last.fm/api/show/user.getWeeklyChartList
    */
   getWeeklyChartList: (
-    params: UserGetWeeklyChartListRequest
+    params: UserGetWeeklyChartListRequest,
+    init?: RequestInit
   ) => Promise<UserGetWeeklyChartListResponse>;
   /**
    * Fetches a list of the user's chart tracks for a given week
@@ -151,83 +159,69 @@ export type UserApiMethods = {
    * @returns {Promise<UserGetWeeklyTrackChartResponse>}
    */
   getWeeklyTrackChart: (
-    params: UserGetWeeklyTrackChartRequest
+    params: UserGetWeeklyTrackChartRequest,
+    init?: RequestInit
   ) => Promise<UserGetWeeklyTrackChartResponse>;
 };
 
 export const userApiMethods: UserApiMethods = {
-  getFriends: (params: UserGetFriendsRequest, init?: RequestInit) =>
+  getFriends: (params, init) =>
     fetcher<UserGetFriendsResponse>(
-      buildUrl(method.user.getFriends, { ...params }),
+      buildUrl(method.user.getFriends, params),
       init
     ),
 
-  getInfo: (params: UserGetInfoRequest, init?: RequestInit) =>
-    fetcher<UserGetInfoResponse>(
-      buildUrl(method.user.getInfo, { ...params }),
-      init
-    ),
+  getInfo: (params, init) =>
+    fetcher<UserGetInfoResponse>(buildUrl(method.user.getInfo, params), init),
 
-  getLovedTracks: (params: UserGetLovedTracksRequest, init?: RequestInit) =>
+  getLovedTracks: (params, init) =>
     fetcher<UserGetLovedTracksResponse>(
-      buildUrl(method.user.getLovedTracks, { ...params }),
+      buildUrl(method.user.getLovedTracks, params),
       init
     ),
-  getRecentTracks: (params: UserGetRecentTracksRequest, init?: RequestInit) =>
+  getRecentTracks: (params, init) =>
     fetcher<UserGetRecentTracksResponse>(
-      buildUrl(method.user.getRecentTracks, { ...params }),
+      buildUrl(method.user.getRecentTracks, params),
       init
     ),
-  getTopAlbums: (params: UserGetTopAlbumsRequest, init?: RequestInit) =>
+  getTopAlbums: (params, init) =>
     fetcher<UserGetTopAlbumsResponse>(
-      buildUrl(method.user.getTopAlbums, { ...params }),
+      buildUrl(method.user.getTopAlbums, params),
       init
     ),
-  getTopArtists: (params: UserGetTopArtistsRequest, init?: RequestInit) =>
+  getTopArtists: (params, init) =>
     fetcher<UserGetTopArtistsResponse>(
-      buildUrl(method.user.getTopArtists, { ...params }),
+      buildUrl(method.user.getTopArtists, params),
       init
     ),
-  getTopTags: (params: UserGetTopTagsRequest, init?: RequestInit) =>
+  getTopTags: (params, init) =>
     fetcher<UserGetTopTagsResponse>(
-      buildUrl(method.user.getTopTags, { ...params }),
+      buildUrl(method.user.getTopTags, params),
       init
     ),
-  getTopTracks: (params: UserGetTopTracksRequest, init?: RequestInit) =>
+  getTopTracks: (params, init) =>
     fetcher<UserGetTopTracksResponse>(
-      buildUrl(method.user.getTopTracks, { ...params }),
+      buildUrl(method.user.getTopTracks, params),
       init
     ),
-  getWeeklyAlbumChart: (
-    params: UserGetWeeklyAlbumChartRequest,
-    init?: RequestInit
-  ) =>
+  getWeeklyAlbumChart: (params, init) =>
     fetcher<UserGetWeeklyAlbumChartResponse>(
-      buildUrl(method.user.getWeeklyAlbumChart, { ...params }),
+      buildUrl(method.user.getWeeklyAlbumChart, params),
       init
     ),
-  getWeeklyArtistChart: (
-    params: UserGetWeeklyArtistChartRequest,
-    init?: RequestInit
-  ) =>
+  getWeeklyArtistChart: (params, init) =>
     fetcher<UserGetWeeklyArtistChartResponse>(
-      buildUrl(method.user.getWeeklyArtistChart, { ...params }),
+      buildUrl(method.user.getWeeklyArtistChart, params),
       init
     ),
-  getWeeklyChartList: (
-    params: UserGetWeeklyChartListRequest,
-    init?: RequestInit
-  ) =>
+  getWeeklyChartList: (params, init) =>
     fetcher<UserGetWeeklyChartListResponse>(
-      buildUrl(method.user.getWeeklyChartList, { ...params }),
+      buildUrl(method.user.getWeeklyChartList, params),
       init
     ),
-  getWeeklyTrackChart: (
-    params: UserGetWeeklyTrackChartRequest,
-    init?: RequestInit
-  ) =>
+  getWeeklyTrackChart: (params, init) =>
     fetcher<UserGetWeeklyTrackChartResponse>(
-      buildUrl(method.user.getWeeklyTrackChart, { ...params }),
+      buildUrl(method.user.getWeeklyTrackChart, params),
       init
     ),
 };

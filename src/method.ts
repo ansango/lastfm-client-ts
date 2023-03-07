@@ -30,6 +30,7 @@ export const method = {
   album: {
     getInfo: "album.getInfo",
     getTags: "album.getTags",
+    getTopTags: "album.getTopTags",
     search: "album.search",
   },
   artist: {
