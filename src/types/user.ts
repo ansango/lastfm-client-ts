@@ -1,14 +1,22 @@
 import type {
   AlbumName,
   ArtistName,
+  Count,
   DateProp,
   Duration,
+  From,
   Image,
+  Limit,
   Mbid,
+  Page,
   Period,
   Playcount,
+  Rank,
   TagName,
   Text,
+  To,
+  Total,
+  TotalPages,
   TrackName,
   Url,
   User,
@@ -16,14 +24,14 @@ import type {
 } from "./base";
 
 export type UserGetFriendsRequest = {
-  user: string;
-  limit?: number;
-  page?: number;
+  user: UserName;
+  limit?: Limit;
+  page?: Page;
 };
 export type UserGetFriendsResponse = {};
 
 export type UserGetInfoRequest = {
-  user: string;
+  user: UserName;
 };
 
 export type UserGetInfoResponse = {
@@ -31,9 +39,9 @@ export type UserGetInfoResponse = {
 };
 
 export type UserGetLovedTracksRequest = {
-  user: string;
-  limit?: number;
-  page?: number;
+  user: UserName;
+  limit?: Limit;
+  page?: Page;
 };
 
 export type LovedTracks = {
@@ -51,10 +59,10 @@ export type LovedTracks = {
   }>;
   "@attr": {
     user: UserName;
-    totalPages: string;
-    page: string;
-    perPage: string;
-    total: string;
+    totalPages: TotalPages;
+    pages: Page;
+    perPages: Page;
+    total: Total;
   };
 };
 
@@ -63,11 +71,11 @@ export type UserGetLovedTracksResponse = {
 };
 
 export type UserGetRecentTracksRequest = {
-  user: string;
-  limit?: number;
-  page?: number;
-  from?: number;
-  to?: number;
+  user: UserName;
+  limit?: Limit;
+  page?: Page;
+  from?: From;
+  to?: To;
 };
 
 export type RecentTracks = {
@@ -84,10 +92,10 @@ export type RecentTracks = {
   }>;
   "@attr": {
     user: UserName;
-    totalPages: string;
-    page: string;
-    perPage: string;
-    total: string;
+    totalPages: TotalPages;
+    pages: Page;
+    perPages: Page;
+    total: Total;
   };
 };
 
@@ -96,9 +104,9 @@ export type UserGetRecentTracksResponse = {
 };
 
 export type UserGetTopAlbumsRequest = {
-  user: string;
-  limit?: number;
-  page?: number;
+  user: UserName;
+  limit?: Limit;
+  page?: Page;
   period?: Period;
 };
 
@@ -115,15 +123,15 @@ export type TopAlbums = {
     playcount: Playcount;
     name: AlbumName;
     "@attr": {
-      rank: string;
+      rank: Rank;
     };
   }>;
   "@attr": {
     user: UserName;
-    totalPages: string;
-    page: string;
-    perPage: string;
-    total: string;
+    totalPages: TotalPages;
+    pages: Page;
+    perPages: Page;
+    total: Total;
   };
 };
 
@@ -132,9 +140,9 @@ export type UserGetTopAlbumsResponse = {
 };
 
 export type UserGetTopArtistsRequest = {
-  user: string;
-  limit?: number;
-  page?: number;
+  user: UserName;
+  limit?: Limit;
+  page?: Page;
   period?: Period;
 };
 
@@ -146,15 +154,15 @@ export type TopArtists = {
     playcount: Playcount;
     url: Url;
     "@attr": {
-      rank: string;
+      rank: Rank;
     };
   }>;
   "@attr": {
     user: UserName;
-    totalPages: string;
-    page: string;
-    perPage: string;
-    total: string;
+    totalPages: TotalPages;
+    pages: Page;
+    perPages: Page;
+    total: Total;
   };
 };
 
@@ -163,16 +171,16 @@ export type UserGetTopArtistsResponse = {
 };
 
 export type UserGetTopTagsRequest = {
-  user: string;
-  limit?: number;
-  page?: number;
+  user: UserName;
+  limit?: Limit;
+  page?: Page;
 };
 
 export type TopTags = {
   tag: Array<{
     name: TagName;
     url: Url;
-    count: string;
+    count: Count;
   }>;
   "@attr": {
     user: UserName;
@@ -184,9 +192,9 @@ export type UserGetTopTagsResponse = {
 };
 
 export type UserGetTopTracksRequest = {
-  user: string;
-  limit?: number;
-  page?: number;
+  user: UserName;
+  limit?: Limit;
+  page?: Page;
   period?: Period;
 };
 
@@ -204,15 +212,15 @@ export type TopTracks = {
     duration: Duration;
     playcount: Playcount;
     "@attr": {
-      rank: string;
+      rank: Rank;
     };
   }>;
   "@attr": {
     user: UserName;
-    totalPages: string;
-    page: string;
-    perPage: string;
-    total: string;
+    totalPages: TotalPages;
+    pages: Page;
+    perPages: Page;
+    total: Total;
   };
 };
 
@@ -221,35 +229,35 @@ export type UserGetTopTracksResponse = {
 };
 
 export type UserGetWeeklyAlbumChartRequest = {
-  user: string;
-  from?: number;
-  to?: number;
+  user: UserName;
+  from?: From;
+  to?: To;
 };
 
 export type WeeklyAlbumChartAttr = {
-  from: string;
-  to: string;
-  user: string;
+  from: From;
+  to: To;
+  user: UserName;
 };
 
 export type WeeklyAlbumChart = {
   album: Array<{
     artist: {
       mbid: Mbid;
-      "#text": ArtistName;
+      "#text": Text;
     };
     mbid: Mbid;
     url: Url;
     name: AlbumName;
     playcount: Playcount;
     "@attr": {
-      rank: string;
+      rank: Rank;
     };
   }>;
   "@attr": {
-    from: string;
-    user: string;
-    to: string;
+    from: From;
+    user: UserName;
+    to: To;
   };
 };
 
@@ -258,9 +266,9 @@ export type UserGetWeeklyAlbumChartResponse = {
 };
 
 export type UserGetWeeklyArtistChartRequest = {
-  user: string;
-  from?: number;
-  to?: number;
+  user: UserName;
+  from?: From;
+  to?: To;
 };
 
 export type WeeklyArtistChart = {
@@ -270,10 +278,14 @@ export type WeeklyArtistChart = {
     name: ArtistName;
     playcount: Playcount;
     "@attr": {
-      rank: string;
+      rank: Rank;
     };
   }>;
-  "@attr": { from: string; user: string; to: string };
+  "@attr": {
+    user: UserName;
+    to: To;
+    from: From;
+  };
 };
 
 export type UserGetWeeklyArtistChartResponse = {
@@ -281,14 +293,14 @@ export type UserGetWeeklyArtistChartResponse = {
 };
 
 export type UserGetWeeklyChartListRequest = {
-  user: string;
+  user: UserName;
 };
 
 export type WeeklyChartList = {
   chart: Array<{
     "#text": Text;
-    from: string;
-    to: string;
+    from: From;
+    to: To;
   }>;
 };
 
@@ -297,16 +309,16 @@ export type UserGetWeeklyChartListResponse = {
 };
 
 export type UserGetWeeklyTrackChartRequest = {
-  user: string;
-  from?: number;
-  to?: number;
+  user: UserName;
+  from?: From;
+  to?: To;
 };
 
 export type WeeklyTrackChart = {
   track: Array<{
     artist: {
       mbid: Mbid;
-      "#text": ArtistName;
+      "#text": Text;
     };
     image: Array<Image>;
     mbid: Mbid;
@@ -314,10 +326,14 @@ export type WeeklyTrackChart = {
     name: TrackName;
     playcount: Playcount;
     "@attr": {
-      rank: string;
+      rank: Rank;
     };
   }>;
-  "@attr": { from: string; user: string; to: string };
+  "@attr": {
+    user: UserName;
+    to: To;
+    from: From;
+  };
 };
 
 export type UserGetWeeklyTrackChartResponse = {

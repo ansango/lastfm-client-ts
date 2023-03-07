@@ -30,6 +30,11 @@ export type Type = string;
 
 export type Unixtime = number;
 
+export type From = string;
+export type To = string;
+
+export type Rank = string;
+
 export type Text = string;
 export type Uts = string;
 
@@ -37,6 +42,12 @@ export type DateProp = {
   uts: Uts;
   "#text": Text;
 };
+
+export type TotalPages = string;
+export type Total = string;
+export type Page = string | number;
+export type Count = string;
+export type Limit = string | number;
 
 export type Image = {
   "#text": Text;

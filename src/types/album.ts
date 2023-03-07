@@ -6,22 +6,6 @@ export type AlbumGetInfoRequest = {
   lang?: string;
 };
 
-export type AlbumResponse = {
-  name: string;
-  artist: string;
-  mbid: string;
-  id: string;
-  url: string;
-  image: Image[];
-  listeners: string;
-  playcount: string;
-  tracks: {
-    track: Track[];
-  };
-  tags: Tag[];
-  wiki: Wiki;
-};
-
 export type AlbumGetInfoResponse = {
   album: AlbumResponse;
 };
