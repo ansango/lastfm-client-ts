@@ -1,10 +1,4 @@
-export type Period =
-  | "overall"
-  | "7day"
-  | "1month"
-  | "3month"
-  | "6month"
-  | "12month";
+type Period = "overall" | "7day" | "1month" | "3month" | "6month" | "12month";
 
 // type AlbumAddTagsRequest = {};
 // type AlbumAddTagsResponse = {};
@@ -132,14 +126,35 @@ type TrackSearchResponse = {};
 // type TrackUpdateNowPlayingRequest = {};
 // type TrackUpdateNowPlayingResponse = {};
 
-type UserGetArtistTracksRequest = {};
-type UserGetArtistTracksResponse = {};
-
-type UserGetFriendsRequest = {};
+type UserGetFriendsRequest = {
+  user: string;
+  limit?: number;
+  page?: number;
+};
 type UserGetFriendsResponse = {};
 
-type UserGetInfoRequest = {};
-type UserGetInfoResponse = {};
+type UserGetInfoRequest = {
+  userName: string;
+};
+
+type UserGetInfoResponse = {
+  id: string;
+  name: string;
+  realname: string;
+  url: string;
+  image: string;
+  country: string;
+  age: string;
+  gender: string;
+  subscriber: string;
+  playcount: string;
+  playlists: string;
+  bootstrap: string;
+  registered: {
+    unixtime: string;
+    "#text": string;
+  };
+};
 
 type UserGetLovedTracksRequest = {};
 type UserGetLovedTracksResponse = {};
@@ -173,3 +188,43 @@ type UserGetWeeklyChartListResponse = {};
 
 type UserGetWeeklyTrackChartRequest = {};
 type UserGetWeeklyTrackChartResponse = {};
+
+type UserApiMethods = {
+  getFriends: (
+    params: UserGetFriendsRequest
+  ) => Promise<UserGetFriendsResponse>;
+  getInfo: (params: UserGetInfoRequest) => Promise<UserGetInfoResponse>;
+  getLovedTracks: (
+    params: UserGetLovedTracksRequest
+  ) => Promise<UserGetLovedTracksResponse>;
+  getPersonalTags: (
+    params: UserGetPersonalTagsRequest
+  ) => Promise<UserGetPersonalTagsResponse>;
+  getRecentTracks: (
+    params: UserGetRecentTracksRequest
+  ) => Promise<UserGetRecentTracksResponse>;
+  getTopAlbums: (
+    params: UserGetTopAlbumsRequest
+  ) => Promise<UserGetTopAlbumsResponse>;
+  getTopArtists: (
+    params: UserGetTopArtistsRequest
+  ) => Promise<UserGetTopArtistsResponse>;
+  getTopTags: (
+    params: UserGetTopTagsRequest
+  ) => Promise<UserGetTopTagsResponse>;
+  getTopTracks: (
+    params: UserGetTopTracksRequest
+  ) => Promise<UserGetTopTracksResponse>;
+  getWeeklyAlbumChart: (
+    params: UserGetWeeklyAlbumChartRequest
+  ) => Promise<UserGetWeeklyAlbumChartResponse>;
+  getWeeklyArtistChart: (
+    params: UserGetWeeklyArtistChartRequest
+  ) => Promise<UserGetWeeklyArtistChartResponse>;
+  getWeeklyChartList: (
+    params: UserGetWeeklyChartListRequest
+  ) => Promise<UserGetWeeklyChartListResponse>;
+  getWeeklyTrackChart: (
+    params: UserGetWeeklyTrackChartRequest
+  ) => Promise<UserGetWeeklyTrackChartResponse>;
+};

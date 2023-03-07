@@ -1,11 +1,14 @@
+import * as dotenv from "dotenv";
+dotenv.config();
+
 export const config = {
-  apiKey: `${process.env.LASTFM_APIKEY}`,
-  appName: `${process.env.LASTFM_APPNAME}`,
-  baseUrl: `${process.env.LASTFM_API_BASE_URL}`,
+  api_key: `${process.env.LASTFM_API_KEY}`,
+  app_name: `${process.env.LASTFM_APPNAME}`,
+  base_url: `${process.env.LASTFM_API_BASE_URL}`,
   format: {
     json: "json",
     xml: "xml",
   },
-  shareSecret: `${process.env.LASTFM_SHARED_SECRET}`,
+  share_secret: `${process.env.LASTFM_SHARED_SECRET}`,
   username: `${process.env.LASTFM_USER}`,
 };
