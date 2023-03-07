@@ -15,3 +15,10 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./user"), exports);
+__exportStar(require("./artist"), exports);
+__exportStar(require("./album"), exports);
+__exportStar(require("./track"), exports);
+__exportStar(require("./tag"), exports);
+__exportStar(require("./chart"), exports);
+__exportStar(require("./geo"), exports);
+__exportStar(require("./library"), exports);

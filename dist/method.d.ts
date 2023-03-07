@@ -1,3 +1,7 @@
+/**
+ * This is a collection of all the API methods provided by Last.fm. It is used to
+ * automatically generate the documentation for the API methods.
+ */
 export declare const method: {
     user: {
         getFriends: string;

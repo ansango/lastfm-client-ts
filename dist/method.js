@@ -1,4 +1,8 @@
 "use strict";
+/**
+ * This is a collection of all the API methods provided by Last.fm. It is used to
+ * automatically generate the documentation for the API methods.
+ */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.method = void 0;
 exports.method = {

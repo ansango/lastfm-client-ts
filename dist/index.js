@@ -18,7 +18,17 @@ exports.lastFmClient = void 0;
 const config_1 = require("./config");
 const api_1 = require("./api");
 const lastFmClient = () => {
-    return { config: config_1.config, userApiMethods: api_1.userApiMethods };
+    return {
+        config: config_1.config,
+        userApiMethods: api_1.userApiMethods,
+        albumApiMethods: api_1.albumApiMethods,
+        artistApiMethods: api_1.artistApiMethods,
+        chartApiMethods: api_1.chartApiMethods,
+        geoApiMethods: api_1.geoApiMethods,
+        libraryApiMethods: api_1.libraryApiMethods,
+        tagApiMethods: api_1.tagApiMethods,
+        trackApiMethods: api_1.trackApiMethods,
+    };
 };
 exports.lastFmClient = lastFmClient;
 __exportStar(require("./types"), exports);
