@@ -1,8 +1,27 @@
 import { config } from "./config";
-import { userApiMethods } from "./api";
+import {
+  userApiMethods,
+  albumApiMethods,
+  artistApiMethods,
+  chartApiMethods,
+  geoApiMethods,
+  libraryApiMethods,
+  tagApiMethods,
+  trackApiMethods,
+} from "./api";
 
 export const lastFmClient = () => {
-  return { config, userApiMethods };
+  return {
+    config,
+    userApiMethods,
+    albumApiMethods,
+    artistApiMethods,
+    chartApiMethods,
+    geoApiMethods,
+    libraryApiMethods,
+    tagApiMethods,
+    trackApiMethods,
+  };
 };
 
 export * from "./types";
