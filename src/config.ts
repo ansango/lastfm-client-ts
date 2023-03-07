@@ -1,11 +1,11 @@
 export const config = {
-  api_key: `${process.env.LASTFM_APIKEY}`,
-  app_name: `${process.env.LASTFM_APPNAME}`,
-  base_url: `${process.env.LASTFM_API_BASE_URL}`,
+  apiKey: `${process.env.LASTFM_APIKEY}`,
+  appName: `${process.env.LASTFM_APPNAME}`,
+  baseUrl: `${process.env.LASTFM_API_BASE_URL}`,
   format: {
     json: "json",
     xml: "xml",
   },
-  share_secret: `${process.env.LASTFM_SHARED_SECRET}`,
+  shareSecret: `${process.env.LASTFM_SHARED_SECRET}`,
   username: `${process.env.LASTFM_USER}`,
 };
