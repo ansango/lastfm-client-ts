@@ -1,5 +1,5 @@
 {
-  "name": "lastfm-client-api",
+  "name": "lastfm-client-ts",
   "version": "1.0.0",
   "description": "A LastFM client written in Typescript",
   "main": "./dist",
@@ -9,7 +9,7 @@
     "clean": "rimraf dist",
     "dev": "npm run clean && tsc --watch --project tsconfig.dev.json"
   },
-  "repository": "https://github.com/ansango/lastfm-client-api.git",
+  "repository": "https://github.com/ansango/lastfm-client-ts.git",
   "author": "Anibal Santos",
   "license": "MIT",
   "keywords": [
