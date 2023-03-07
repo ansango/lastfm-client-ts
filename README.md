@@ -1,4 +1,4 @@
-# lastfm-api-client
+# lastfm-client-ts
 
 ## Table of Contents
 
