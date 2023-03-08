@@ -57,7 +57,7 @@ export default async function handler() {
 
 To run this project, you will need to add the following environment variables to your .env file
 
-`LASTFM_API_BASE_URL=http://ws.audioscrobbler.com/2.0/`
-`LASTFM_USER=`
-`LASTFM_API_KEY=`
-`LASTFM_APPNAME=`
+- `LASTFM_API_BASE_URL=http://ws.audioscrobbler.com/2.0/`
+- `LASTFM_USER=`
+- `LASTFM_API_KEY=`
+- `LASTFM_APPNAME=`
