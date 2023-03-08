@@ -1,4 +1,44 @@
-import type { AlbumName, ArtistName, Lang, Mbid, UserName, Album, TagName, Url, Count, Limit, Page, Text, TotalResults, StartIndex, ItemsPerPage, For, Image } from "./base";
+import type { AlbumName, ArtistName, Lang, Mbid, UserName, TagName, Url, Count, Limit, Page, Text, TotalResults, StartIndex, ItemsPerPage, For, Image, Duration, Name, Published, Summary, Content, Playcount, Listeners } from "./base";
+type AlbumTag = {
+    tag: Array<{
+        name: TagName;
+        url: Url;
+    }>;
+};
+type AlbumTrackArtist = {
+    name: ArtistName;
+    mbid: Mbid;
+    url: Url;
+};
+type AlbumTrack = {
+    track: Array<{
+        duration: Duration;
+        name: Name;
+        url: Url;
+        artist: AlbumTrackArtist;
+    }>;
+};
+type AlbumWiki = {
+    published: Published;
+    summary: Summary;
+    content: Content;
+};
+/**
+ * Album
+ * @see https://www.last.fm/api/show/album.getInfo
+ */
+export type Album = {
+    artist: ArtistName;
+    mbid: Mbid;
+    tags: AlbumTag;
+    playcount: Playcount;
+    image: Array<Image>;
+    tracks: AlbumTrack;
+    url: Url;
+    name: AlbumName;
+    listeners: Listeners;
+    wiki: AlbumWiki;
+};
 export type AlbumGetInfoRequest = {
     artist: ArtistName;
     album: AlbumName;
@@ -72,3 +112,4 @@ export type AlbumSearchResponse = {
         };
     };
 };
+export {};

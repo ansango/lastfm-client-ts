@@ -21,13 +21,6 @@ exports.method = {
         getWeeklyChartList: "user.getWeeklyChartList",
         getWeeklyTrackChart: "user.getWeeklyTrackChart",
     },
-    track: {
-        getInfo: "track.getInfo",
-        getSimilar: "track.getSimilar",
-        getTags: "track.getTags",
-        getTopTags: "track.getTopTags",
-        search: "track.search",
-    },
     album: {
         getInfo: "album.getInfo",
         getTags: "album.getTags",
@@ -35,13 +28,19 @@ exports.method = {
         search: "album.search",
     },
     artist: {
-        getCorrection: "artist.getCorrection",
         getInfo: "artist.getInfo",
         getTags: "artist.getTags",
         getTopAlbums: "artist.getTopAlbums",
         getTopTags: "artist.getTopTags",
         getTopTracks: "artist.getTopTracks",
         search: "artist.search",
+    },
+    track: {
+        getInfo: "track.getInfo",
+        getSimilar: "track.getSimilar",
+        getTags: "track.getTags",
+        getTopTags: "track.getTopTags",
+        search: "track.search",
     },
     library: {
         getArtists: "library.getArtists",

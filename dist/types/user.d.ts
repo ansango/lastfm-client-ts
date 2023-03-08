@@ -1,4 +1,4 @@
-import type { AlbumName, ArtistName, Count, DateProp, Duration, From, Image, Limit, Mbid, Page, Period, Playcount, Rank, TagName, Text, To, Total, TotalPages, TrackName, Url, User, UserName } from "./base";
+import type { Age, AlbumCount, AlbumName, ArtistCount, ArtistName, Bootstrap, Count, Country, DateProp, Duration, From, Gender, Image, Limit, Mbid, Page, Period, Playcount, Playlists, Rank, RealName, Subscriber, TagName, Text, To, Total, TotalPages, TrackCount, TrackName, Type, Unixtime, Url, UserName } from "./base";
 export type UserGetFriendsRequest = {
     user: UserName;
     limit?: Limit;
@@ -7,6 +7,31 @@ export type UserGetFriendsRequest = {
 export type UserGetFriendsResponse = {};
 export type UserGetInfoRequest = {
     user: UserName;
+};
+/**
+ * User
+ * @see https://www.last.fm/api/show/user.getInfo
+ */
+export type User = {
+    name: UserName;
+    age: Age;
+    subscriber: Subscriber;
+    realname: RealName;
+    bootstrap: Bootstrap;
+    playcount: Playcount;
+    artist_count: ArtistCount;
+    playlists: Playlists;
+    track_count: TrackCount;
+    album_count: AlbumCount;
+    image: Array<Image>;
+    registered: {
+        unixtime: Unixtime;
+        "#text": number;
+    };
+    country: Country;
+    gender: Gender;
+    url: Url;
+    type: Type;
 };
 export type UserGetInfoResponse = {
     user: User;

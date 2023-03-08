@@ -18,13 +18,6 @@ export declare const method: {
         getWeeklyChartList: string;
         getWeeklyTrackChart: string;
     };
-    track: {
-        getInfo: string;
-        getSimilar: string;
-        getTags: string;
-        getTopTags: string;
-        search: string;
-    };
     album: {
         getInfo: string;
         getTags: string;
@@ -32,12 +25,18 @@ export declare const method: {
         search: string;
     };
     artist: {
-        getCorrection: string;
         getInfo: string;
         getTags: string;
         getTopAlbums: string;
         getTopTags: string;
         getTopTracks: string;
+        search: string;
+    };
+    track: {
+        getInfo: string;
+        getSimilar: string;
+        getTags: string;
+        getTopTags: string;
         search: string;
     };
     library: {

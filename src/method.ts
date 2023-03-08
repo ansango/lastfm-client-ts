@@ -19,13 +19,6 @@ export const method = {
     getWeeklyChartList: "user.getWeeklyChartList",
     getWeeklyTrackChart: "user.getWeeklyTrackChart",
   },
-  track: {
-    getInfo: "track.getInfo",
-    getSimilar: "track.getSimilar",
-    getTags: "track.getTags",
-    getTopTags: "track.getTopTags",
-    search: "track.search",
-  },
   album: {
     getInfo: "album.getInfo",
     getTags: "album.getTags",
@@ -33,7 +26,6 @@ export const method = {
     search: "album.search",
   },
   artist: {
-    getCorrection: "artist.getCorrection",
     getInfo: "artist.getInfo",
     getTags: "artist.getTags",
     getTopAlbums: "artist.getTopAlbums",
@@ -41,6 +33,14 @@ export const method = {
     getTopTracks: "artist.getTopTracks",
     search: "artist.search",
   },
+  track: {
+    getInfo: "track.getInfo",
+    getSimilar: "track.getSimilar",
+    getTags: "track.getTags",
+    getTopTags: "track.getTopTags",
+    search: "track.search",
+  },
+
   library: {
     getArtists: "library.getArtists",
   },
