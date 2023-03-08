@@ -13,6 +13,7 @@
   - [Getting Started ](#getting-started-)
     - [Installing](#installing)
     - [Usage](#usage)
+    - [Environment Variables](#environment-variables)
 
 ## About <a name = "about"></a>
 
@@ -51,3 +52,12 @@ export default async function handler() {
   };
 }
 ```
+
+### Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+
+`LASTFM_API_BASE_URL=http://ws.audioscrobbler.com/2.0/`
+`LASTFM_USER=`
+`LASTFM_API_KEY=`
+`LASTFM_APPNAME=`
