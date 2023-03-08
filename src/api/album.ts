@@ -1,5 +1,5 @@
 import { method } from "../method";
-import {
+import type {
   AlbumGetInfoRequest,
   AlbumGetInfoResponse,
   AlbumGetTagsRequest,

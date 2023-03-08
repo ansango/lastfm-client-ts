@@ -1,4 +1,4 @@
-import { ArtistGetInfoRequest, ArtistGetInfoResponse, ArtistGetTagsRequest, ArtistGetTagsResponse, ArtistGetTopAlbumsRequest, ArtistGetTopAlbumsResponse, ArtistGetTopTagsRequest, ArtistGetTopTagsResponse, ArtistGetTopTracksRequest, ArtistGetTopTracksResponse, ArtistSearchRequest, ArtistSearchResponse } from "../types/artist";
+import type { ArtistGetInfoRequest, ArtistGetInfoResponse, ArtistGetTagsRequest, ArtistGetTagsResponse, ArtistGetTopAlbumsRequest, ArtistGetTopAlbumsResponse, ArtistGetTopTagsRequest, ArtistGetTopTagsResponse, ArtistGetTopTracksRequest, ArtistGetTopTracksResponse, ArtistSearchRequest, ArtistSearchResponse } from "../types/artist";
 export type ArtistApiMethods = {
     /**
      * Get the metadata for an artist. Includes biography.

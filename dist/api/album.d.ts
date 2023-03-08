@@ -1,4 +1,4 @@
-import { AlbumGetInfoRequest, AlbumGetInfoResponse, AlbumGetTagsRequest, AlbumGetTagsResponse, AlbumGetTopTagsRequest, AlbumGetTopTagsResponse, AlbumSearchRequest, AlbumSearchResponse } from "../types/album";
+import type { AlbumGetInfoRequest, AlbumGetInfoResponse, AlbumGetTagsRequest, AlbumGetTagsResponse, AlbumGetTopTagsRequest, AlbumGetTopTagsResponse, AlbumSearchRequest, AlbumSearchResponse } from "../types/album";
 export type AlbumApiMethods = {
     /**
      * Get the metadata for an album on Last.fm using the album name or a musicbrainz id.
