@@ -1,4 +1,4 @@
-import type { AlbumName, ArtistName, Content, Duration, Image, Listeners, Mbid, Playcount, Position, Published, Summary, TagName, TrackName, Url } from "./base";
+import type { AlbumName, ArtistName, Content, Count, Duration, For, Image, ItemsPerPage, Limit, Listeners, Match, Mbid, Page, Playcount, Position, Published, Role, SearchTerms, StartIndex, StartPage, Summary, TagName, TotalResults, TrackName, Url, UserName } from "./base";
 export type TrackArtist = {
     name: ArtistName;
     mbid: Mbid;
@@ -41,15 +41,107 @@ export type Track = {
     topTags: TrackTopTag;
     wiki: TrackWiki;
 };
-export type TrackGetCorrectionRequest = {};
-export type TrackGetCorrectionResponse = {};
-export type TrackGetInfoRequest = {};
-export type TrackGetInfoResponse = {};
-export type TrackGetSimilarRequest = {};
-export type TrackGetSimilarResponse = {};
-export type TrackGetTagsRequest = {};
-export type TrackGetTagsResponse = {};
-export type TrackGetTopTagsRequest = {};
-export type TrackGetTopTagsResponse = {};
-export type TrackSearchRequest = {};
-export type TrackSearchResponse = {};
+export type TrackGetInfoRequest = {
+    artist: ArtistName;
+    track: TrackName;
+    mbid?: Mbid;
+    username?: UserName;
+};
+export type TrackGetInfoResponse = {
+    track: Track;
+};
+export type TrackGetSimilarRequest = {
+    artist: ArtistName;
+    track: TrackName;
+    mbid?: Mbid;
+    limit?: Limit;
+};
+export type TrackGetSimilarResponse = {
+    similartracks: {
+        track: Array<{
+            name: TrackName;
+            playcount: Playcount;
+            mbid: Mbid;
+            match: Match;
+            url: Url;
+            duration: Duration;
+            artist: {
+                name: ArtistName;
+                mbid: Mbid;
+                url: Url;
+            };
+            image: Array<Image>;
+        }>;
+        "@attr": {
+            artist: ArtistName;
+        };
+    };
+};
+export type TrackGetTagsRequest = {
+    artist: ArtistName;
+    track: TrackName;
+    mbid?: Mbid;
+    user?: UserName;
+};
+export type TrackGetTagsResponse = {
+    tags: {
+        tag: Array<{
+            name: TagName;
+            url: Url;
+        }>;
+        "@attr": {
+            artist: ArtistName;
+            track: TrackName;
+        };
+    };
+};
+export type TrackGetTopTagsRequest = {
+    artist: ArtistName;
+    track: TrackName;
+    mbid?: Mbid;
+};
+export type TrackGetTopTagsResponse = {
+    toptags: {
+        tag: Array<{
+            name: TagName;
+            url: Url;
+            count: Count;
+        }>;
+        "@attr": {
+            artist: ArtistName;
+            track: TrackName;
+        };
+    };
+};
+export type TrackSearchRequest = {
+    track: TrackName;
+    limit?: Limit;
+    page?: Page;
+    artist?: ArtistName;
+};
+export type TrackSearchResponse = {
+    results: {
+        "opensearch:Query": {
+            "#text": Text;
+            role: Role;
+            searchTerms: SearchTerms;
+            startPage: StartPage;
+        };
+        "opensearch:totalResults": TotalResults;
+        "opensearch:startIndex": StartIndex;
+        "opensearch:itemsPerPage": ItemsPerPage;
+        trackmatches: {
+            track: Array<{
+                name: TrackName;
+                artist: ArtistName;
+                url: Url;
+                listeners: Listeners;
+                image: Array<Image>;
+                mbid: Mbid;
+            }>;
+        };
+        "@attr": {
+            for: For;
+        };
+    };
+};

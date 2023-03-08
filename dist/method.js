@@ -43,9 +43,6 @@ exports.method = {
         getTopTags: "track.getTopTags",
         search: "track.search",
     },
-    library: {
-        getArtists: "library.getArtists",
-    },
     tag: {
         getInfo: "tag.getInfo",
         getTopArtists: "tag.getTopArtists",
@@ -54,6 +51,9 @@ exports.method = {
         getTopTags: "tag.getTopTags",
         getSimilar: "tag.getSimilar",
         getWeeklyChartList: "tag.getWeeklyChartList",
+    },
+    library: {
+        getArtists: "library.getArtists",
     },
     chart: {
         getTopArtists: "chart.getTopArtists",

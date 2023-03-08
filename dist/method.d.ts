@@ -40,9 +40,6 @@ export declare const method: {
         getTopTags: string;
         search: string;
     };
-    library: {
-        getArtists: string;
-    };
     tag: {
         getInfo: string;
         getTopArtists: string;
@@ -51,6 +48,9 @@ export declare const method: {
         getTopTags: string;
         getSimilar: string;
         getWeeklyChartList: string;
+    };
+    library: {
+        getArtists: string;
     };
     chart: {
         getTopArtists: string;
