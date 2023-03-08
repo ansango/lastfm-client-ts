@@ -19,7 +19,6 @@ export declare const method: {
         getWeeklyTrackChart: string;
     };
     track: {
-        getCorrection: string;
         getInfo: string;
         getSimilar: string;
         getTags: string;
@@ -29,6 +28,7 @@ export declare const method: {
     album: {
         getInfo: string;
         getTags: string;
+        getTopTags: string;
         search: string;
     };
     artist: {

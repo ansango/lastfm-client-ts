@@ -1,139 +1,283 @@
-import type { Album, Artist, Attr2, Attr3, Chart, Period, Tag, Track, User, WeeklyAlbum } from "./base";
+import type { AlbumName, ArtistName, Count, DateProp, Duration, From, Image, Limit, Mbid, Page, Period, Playcount, Rank, TagName, Text, To, Total, TotalPages, TrackName, Url, User, UserName } from "./base";
 export type UserGetFriendsRequest = {
-    user: string;
-    limit?: number;
-    page?: number;
+    user: UserName;
+    limit?: Limit;
+    page?: Page;
 };
 export type UserGetFriendsResponse = {};
 export type UserGetInfoRequest = {
-    user: string;
+    user: UserName;
 };
 export type UserGetInfoResponse = {
     user: User;
 };
 export type UserGetLovedTracksRequest = {
-    user: string;
-    limit?: number;
-    page?: number;
+    user: UserName;
+    limit?: Limit;
+    page?: Page;
 };
 export type LovedTracks = {
-    track: Track[];
-    "@attr": Attr;
+    track: Array<{
+        artist: {
+            name: ArtistName;
+            mbid: Mbid;
+            url: Url;
+        };
+        date: DateProp;
+        name: TrackName;
+        mbid: Mbid;
+        url: Url;
+        image: Array<Image>;
+    }>;
+    "@attr": {
+        user: UserName;
+        totalPages: TotalPages;
+        pages: Page;
+        perPages: Page;
+        total: Total;
+    };
 };
 export type UserGetLovedTracksResponse = {
     lovedtracks: LovedTracks;
 };
 export type UserGetRecentTracksRequest = {
-    user: string;
-    limit?: number;
-    page?: number;
-    from?: number;
-    to?: number;
+    user: UserName;
+    limit?: Limit;
+    page?: Page;
+    from?: From;
+    to?: To;
 };
 export type RecentTracks = {
-    track: Track[];
-    "@attr": Attr2;
+    track: Array<{
+        artist: {
+            name: ArtistName;
+            mbid: Mbid;
+        };
+        date: DateProp;
+        name: TrackName;
+        mbid: Mbid;
+        url: Url;
+        image: Array<Image>;
+    }>;
+    "@attr": {
+        user: UserName;
+        totalPages: TotalPages;
+        pages: Page;
+        perPages: Page;
+        total: Total;
+    };
 };
 export type UserGetRecentTracksResponse = {
     recenttracks: RecentTracks;
 };
 export type UserGetTopAlbumsRequest = {
-    user: string;
-    limit?: number;
-    page?: number;
+    user: UserName;
+    limit?: Limit;
+    page?: Page;
     period?: Period;
 };
 export type TopAlbums = {
-    album: Album[];
-    "@attr": Attr2;
+    album: Array<{
+        artist: {
+            name: ArtistName;
+            mbid: Mbid;
+            url: Url;
+        };
+        image: Array<Image>;
+        mbid: Mbid;
+        url: Url;
+        playcount: Playcount;
+        name: AlbumName;
+        "@attr": {
+            rank: Rank;
+        };
+    }>;
+    "@attr": {
+        user: UserName;
+        totalPages: TotalPages;
+        pages: Page;
+        perPages: Page;
+        total: Total;
+    };
 };
 export type UserGetTopAlbumsResponse = {
     topalbums: TopAlbums;
 };
 export type UserGetTopArtistsRequest = {
-    user: string;
-    limit?: number;
-    page?: number;
+    user: UserName;
+    limit?: Limit;
+    page?: Page;
     period?: Period;
 };
 export type TopArtists = {
-    artist: Artist[];
-    "@attr": Attr2;
+    artist: Array<{
+        image: Array<Image>;
+        mbid: Mbid;
+        name: ArtistName;
+        playcount: Playcount;
+        url: Url;
+        "@attr": {
+            rank: Rank;
+        };
+    }>;
+    "@attr": {
+        user: UserName;
+        totalPages: TotalPages;
+        pages: Page;
+        perPages: Page;
+        total: Total;
+    };
 };
 export type UserGetTopArtistsResponse = {
     topartists: TopArtists;
 };
 export type UserGetTopTagsRequest = {
-    user: string;
-    limit?: number;
-    page?: number;
+    user: UserName;
+    limit?: Limit;
+    page?: Page;
 };
 export type TopTags = {
-    tag: Tag[];
-    "@attr": Attr3;
+    tag: Array<{
+        name: TagName;
+        url: Url;
+        count: Count;
+    }>;
+    "@attr": {
+        user: UserName;
+    };
 };
 export type UserGetTopTagsResponse = {
     toptags: TopTags;
 };
 export type UserGetTopTracksRequest = {
-    user: string;
-    limit?: number;
-    page?: number;
+    user: UserName;
+    limit?: Limit;
+    page?: Page;
     period?: Period;
 };
 export type TopTracks = {
-    track: Track[];
-    "@attr": Attr2;
+    track: Array<{
+        mbid: Mbid;
+        name: TrackName;
+        image: Array<Image>;
+        artist: {
+            name: ArtistName;
+            mbid: Mbid;
+            url: Url;
+        };
+        url: Url;
+        duration: Duration;
+        playcount: Playcount;
+        "@attr": {
+            rank: Rank;
+        };
+    }>;
+    "@attr": {
+        user: UserName;
+        totalPages: TotalPages;
+        pages: Page;
+        perPages: Page;
+        total: Total;
+    };
 };
 export type UserGetTopTracksResponse = {
     toptracks: TopTracks;
 };
 export type UserGetWeeklyAlbumChartRequest = {
-    user: string;
-    from?: number;
-    to?: number;
+    user: UserName;
+    from?: From;
+    to?: To;
 };
 export type WeeklyAlbumChartAttr = {
-    from: string;
-    to: string;
-    user: string;
+    from: From;
+    to: To;
+    user: UserName;
 };
 export type WeeklyAlbumChart = {
-    album: WeeklyAlbum[];
-    "@attr": WeeklyAlbumChartAttr;
+    album: Array<{
+        artist: {
+            mbid: Mbid;
+            "#text": Text;
+        };
+        mbid: Mbid;
+        url: Url;
+        name: AlbumName;
+        playcount: Playcount;
+        "@attr": {
+            rank: Rank;
+        };
+    }>;
+    "@attr": {
+        from: From;
+        user: UserName;
+        to: To;
+    };
 };
 export type UserGetWeeklyAlbumChartResponse = {
     weeklyalbumchart: WeeklyAlbumChart;
 };
 export type UserGetWeeklyArtistChartRequest = {
-    user: string;
-    from?: number;
-    to?: number;
+    user: UserName;
+    from?: From;
+    to?: To;
 };
 export type WeeklyArtistChart = {
-    artist: Artist[];
-    "@attr": Attr2;
+    artist: Array<{
+        mbid: Mbid;
+        url: Url;
+        name: ArtistName;
+        playcount: Playcount;
+        "@attr": {
+            rank: Rank;
+        };
+    }>;
+    "@attr": {
+        user: UserName;
+        to: To;
+        from: From;
+    };
 };
 export type UserGetWeeklyArtistChartResponse = {
     weeklyartistchart: WeeklyArtistChart;
 };
 export type UserGetWeeklyChartListRequest = {
-    user: string;
+    user: UserName;
 };
 export type WeeklyChartList = {
-    chart: Chart[];
+    chart: Array<{
+        "#text": Text;
+        from: From;
+        to: To;
+    }>;
 };
 export type UserGetWeeklyChartListResponse = {
     weeklychartlist: WeeklyChartList;
 };
 export type UserGetWeeklyTrackChartRequest = {
-    user: string;
-    from?: number;
-    to?: number;
+    user: UserName;
+    from?: From;
+    to?: To;
 };
 export type WeeklyTrackChart = {
-    track: Track[];
-    "@attr": Attr2;
+    track: Array<{
+        artist: {
+            mbid: Mbid;
+            "#text": Text;
+        };
+        image: Array<Image>;
+        mbid: Mbid;
+        url: Url;
+        name: TrackName;
+        playcount: Playcount;
+        "@attr": {
+            rank: Rank;
+        };
+    }>;
+    "@attr": {
+        user: UserName;
+        to: To;
+        from: From;
+    };
 };
 export type UserGetWeeklyTrackChartResponse = {
     weeklytrackchart: WeeklyTrackChart;

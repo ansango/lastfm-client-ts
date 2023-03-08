@@ -31,7 +31,7 @@ export type UserApiMethods = {
      * @returns {Promise<UserGetRecentTracksResponse>}
      * https://www.last.fm/api/show/user.getRecentTracks
      */
-    getRecentTracks: (params: UserGetRecentTracksRequest) => Promise<UserGetRecentTracksResponse>;
+    getRecentTracks: (params: UserGetRecentTracksRequest, init?: RequestInit) => Promise<UserGetRecentTracksResponse>;
     /**
      * Fetches a list of the user's top albums
      * @param {UserGetTopAlbumsRequest} params
@@ -39,7 +39,7 @@ export type UserApiMethods = {
      * @returns {Promise<UserGetTopAlbumsResponse>}
      * https://www.last.fm/api/show/user.getTopAlbums
      */
-    getTopAlbums: (params: UserGetTopAlbumsRequest) => Promise<UserGetTopAlbumsResponse>;
+    getTopAlbums: (params: UserGetTopAlbumsRequest, init?: RequestInit) => Promise<UserGetTopAlbumsResponse>;
     /**
      * Fetches a list of the user's top artists
      * @param {UserGetTopArtistsRequest} params
@@ -47,7 +47,7 @@ export type UserApiMethods = {
      * @returns {Promise<UserGetTopArtistsResponse>}
      * https://www.last.fm/api/show/user.getTopArtists
      */
-    getTopArtists: (params: UserGetTopArtistsRequest) => Promise<UserGetTopArtistsResponse>;
+    getTopArtists: (params: UserGetTopArtistsRequest, init?: RequestInit) => Promise<UserGetTopArtistsResponse>;
     /**
      * Fetches a list of the user's top tags
      * @param {UserGetTopTagsRequest} params
@@ -55,7 +55,7 @@ export type UserApiMethods = {
      * @returns {Promise<UserGetTopTagsResponse>}
      * https://www.last.fm/api/show/user.getTopTags
      */
-    getTopTags: (params: UserGetTopTagsRequest) => Promise<UserGetTopTagsResponse>;
+    getTopTags: (params: UserGetTopTagsRequest, init?: RequestInit) => Promise<UserGetTopTagsResponse>;
     /**
      * Fetches a list of the user's top tracks
      * @param {UserGetTopTracksRequest} params
@@ -63,7 +63,7 @@ export type UserApiMethods = {
      * @returns {Promise<UserGetTopTracksResponse>}
      * https://www.last.fm/api/show/user.getTopTracks
      */
-    getTopTracks: (params: UserGetTopTracksRequest) => Promise<UserGetTopTracksResponse>;
+    getTopTracks: (params: UserGetTopTracksRequest, init?: RequestInit) => Promise<UserGetTopTracksResponse>;
     /**
      * Fetches a list of the user's chart albums for a given week
      * @param {UserGetWeeklyAlbumChartRequest} params
@@ -71,7 +71,7 @@ export type UserApiMethods = {
      * @returns {Promise<UserGetWeeklyAlbumChartResponse>}
      * https://www.last.fm/api/show/user.getWeeklyAlbumChart
      */
-    getWeeklyAlbumChart: (params: UserGetWeeklyAlbumChartRequest) => Promise<UserGetWeeklyAlbumChartResponse>;
+    getWeeklyAlbumChart: (params: UserGetWeeklyAlbumChartRequest, init?: RequestInit) => Promise<UserGetWeeklyAlbumChartResponse>;
     /**
      * Fetches a list of the user's chart artists for a given week
      * @param {UserGetWeeklyArtistChartRequest} params
@@ -79,7 +79,7 @@ export type UserApiMethods = {
      * @returns {Promise<UserGetWeeklyArtistChartResponse>}
      * https://www.last.fm/api/show/user.getWeeklyArtistChart
      */
-    getWeeklyArtistChart: (params: UserGetWeeklyArtistChartRequest) => Promise<UserGetWeeklyArtistChartResponse>;
+    getWeeklyArtistChart: (params: UserGetWeeklyArtistChartRequest, init?: RequestInit) => Promise<UserGetWeeklyArtistChartResponse>;
     /**
      * Fetches a list of the user's chart lists for a given week
      * @param {UserGetWeeklyChartListRequest} params
@@ -87,13 +87,13 @@ export type UserApiMethods = {
      * @returns {Promise<UserGetWeeklyChartListResponse>}
      * https://www.last.fm/api/show/user.getWeeklyChartList
      */
-    getWeeklyChartList: (params: UserGetWeeklyChartListRequest) => Promise<UserGetWeeklyChartListResponse>;
+    getWeeklyChartList: (params: UserGetWeeklyChartListRequest, init?: RequestInit) => Promise<UserGetWeeklyChartListResponse>;
     /**
      * Fetches a list of the user's chart tracks for a given week
      * @param {UserGetWeeklyTrackChartRequest} params
      * @param {RequestInit} init
      * @returns {Promise<UserGetWeeklyTrackChartResponse>}
      */
-    getWeeklyTrackChart: (params: UserGetWeeklyTrackChartRequest) => Promise<UserGetWeeklyTrackChartResponse>;
+    getWeeklyTrackChart: (params: UserGetWeeklyTrackChartRequest, init?: RequestInit) => Promise<UserGetWeeklyTrackChartResponse>;
 };
 export declare const userApiMethods: UserApiMethods;
