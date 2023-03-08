@@ -22,6 +22,9 @@ import type {
   Content,
   Playcount,
   Listeners,
+  Role,
+  SearchTerms,
+  StartPage,
 } from "./base";
 
 type AlbumTag = {
@@ -129,6 +132,9 @@ export type AlbumSearchResponse = {
   results: {
     "opensearch:Query": {
       "#text": Text;
+      role: Role;
+      searchTerms: SearchTerms;
+      startPage: StartPage;
     };
     "opensearch:totalResults": TotalResults;
     "opensearch:startIndex": StartIndex;

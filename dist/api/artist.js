@@ -6,6 +6,7 @@ const utils_1 = require("../utils");
 exports.artistApiMethods = {
     getInfo: (params, init) => (0, utils_1.fetcher)((0, utils_1.buildUrl)(method_1.method.artist.getInfo, params), init),
     getTags: (params, init) => (0, utils_1.fetcher)((0, utils_1.buildUrl)(method_1.method.artist.getTags, params), init),
+    getSimilar: (params, init) => (0, utils_1.fetcher)((0, utils_1.buildUrl)(method_1.method.artist.getSimilar, params), init),
     getTopTags: (params, init) => (0, utils_1.fetcher)((0, utils_1.buildUrl)(method_1.method.artist.getTopTags, params), init),
     getTopAlbums: (params, init) => (0, utils_1.fetcher)((0, utils_1.buildUrl)(method_1.method.artist.getTopAlbums, params), init),
     getTopTracks: (params, init) => (0, utils_1.fetcher)((0, utils_1.buildUrl)(method_1.method.artist.getTopTracks, params), init),

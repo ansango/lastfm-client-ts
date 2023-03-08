@@ -27,6 +27,7 @@ export declare const method: {
     artist: {
         getInfo: string;
         getTags: string;
+        getSimilar: string;
         getTopAlbums: string;
         getTopTags: string;
         getTopTracks: string;

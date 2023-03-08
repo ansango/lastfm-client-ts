@@ -31,6 +31,10 @@ export type Rank = string;
 export type Text = string;
 export type Uts = string;
 export type Lang = string;
+export type Match = string;
+export type Role = string;
+export type SearchTerms = string;
+export type StartPage = string;
 export type DateProp = {
     uts: Uts;
     "#text": Text;

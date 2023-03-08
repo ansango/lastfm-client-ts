@@ -12,6 +12,8 @@ import type {
   ArtistGetTopTracksResponse,
   ArtistSearchRequest,
   ArtistSearchResponse,
+  ArtistGetSimilarRequest,
+  ArtistGetSimilarResponse,
 } from "../types/artist";
 import { buildUrl, fetcher } from "../utils";
 
@@ -38,6 +40,17 @@ export type ArtistApiMethods = {
     params: ArtistGetTagsRequest,
     init?: RequestInit
   ) => Promise<ArtistGetTagsResponse>;
+  /**
+   * Get the similar artists for this artist on Last.fm, based on listening data.
+   * @param {ArtistGetSimilarRequest} params
+   * @param {RequestInit} init
+   * @returns {Promise<ArtistGetSimilarResponse>}
+   * https://www.last.fm/api/show/artist.getSimilar
+   * */
+  getSimilar: (
+    params: ArtistGetSimilarRequest,
+    init?: RequestInit
+  ) => Promise<ArtistGetSimilarResponse>;
   /**
    * Get the top tags for an artist on Last.fm, ordered by popularity.
    * @param {ArtistGetTopTagsRequest} params
@@ -93,6 +106,11 @@ export const artistApiMethods: ArtistApiMethods = {
   getTags: (params, init) =>
     fetcher<ArtistGetTagsResponse>(
       buildUrl(method.artist.getTags, params),
+      init
+    ),
+  getSimilar: (params, init) =>
+    fetcher<ArtistGetSimilarResponse>(
+      buildUrl(method.artist.getSimilar, params),
       init
     ),
   getTopTags: (params, init) =>

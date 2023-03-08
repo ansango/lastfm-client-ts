@@ -28,6 +28,7 @@ export const method = {
   artist: {
     getInfo: "artist.getInfo",
     getTags: "artist.getTags",
+    getSimilar: "artist.getSimilar",
     getTopAlbums: "artist.getTopAlbums",
     getTopTags: "artist.getTopTags",
     getTopTracks: "artist.getTopTracks",

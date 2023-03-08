@@ -1,4 +1,4 @@
-import type { AlbumName, ArtistName, Lang, Mbid, UserName, TagName, Url, Count, Limit, Page, Text, TotalResults, StartIndex, ItemsPerPage, For, Image, Duration, Name, Published, Summary, Content, Playcount, Listeners } from "./base";
+import type { AlbumName, ArtistName, Lang, Mbid, UserName, TagName, Url, Count, Limit, Page, Text, TotalResults, StartIndex, ItemsPerPage, For, Image, Duration, Name, Published, Summary, Content, Playcount, Listeners, Role, SearchTerms, StartPage } from "./base";
 type AlbumTag = {
     tag: Array<{
         name: TagName;
@@ -94,6 +94,9 @@ export type AlbumSearchResponse = {
     results: {
         "opensearch:Query": {
             "#text": Text;
+            role: Role;
+            searchTerms: SearchTerms;
+            startPage: StartPage;
         };
         "opensearch:totalResults": TotalResults;
         "opensearch:startIndex": StartIndex;

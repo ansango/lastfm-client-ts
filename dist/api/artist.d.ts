@@ -1,4 +1,4 @@
-import type { ArtistGetInfoRequest, ArtistGetInfoResponse, ArtistGetTagsRequest, ArtistGetTagsResponse, ArtistGetTopAlbumsRequest, ArtistGetTopAlbumsResponse, ArtistGetTopTagsRequest, ArtistGetTopTagsResponse, ArtistGetTopTracksRequest, ArtistGetTopTracksResponse, ArtistSearchRequest, ArtistSearchResponse } from "../types/artist";
+import type { ArtistGetInfoRequest, ArtistGetInfoResponse, ArtistGetTagsRequest, ArtistGetTagsResponse, ArtistGetTopAlbumsRequest, ArtistGetTopAlbumsResponse, ArtistGetTopTagsRequest, ArtistGetTopTagsResponse, ArtistGetTopTracksRequest, ArtistGetTopTracksResponse, ArtistSearchRequest, ArtistSearchResponse, ArtistGetSimilarRequest, ArtistGetSimilarResponse } from "../types/artist";
 export type ArtistApiMethods = {
     /**
      * Get the metadata for an artist. Includes biography.
@@ -16,6 +16,14 @@ export type ArtistApiMethods = {
      * https://www.last.fm/api/show/artist.getTags
      * */
     getTags: (params: ArtistGetTagsRequest, init?: RequestInit) => Promise<ArtistGetTagsResponse>;
+    /**
+     * Get the similar artists for this artist on Last.fm, based on listening data.
+     * @param {ArtistGetSimilarRequest} params
+     * @param {RequestInit} init
+     * @returns {Promise<ArtistGetSimilarResponse>}
+     * https://www.last.fm/api/show/artist.getSimilar
+     * */
+    getSimilar: (params: ArtistGetSimilarRequest, init?: RequestInit) => Promise<ArtistGetSimilarResponse>;
     /**
      * Get the top tags for an artist on Last.fm, ordered by popularity.
      * @param {ArtistGetTopTagsRequest} params
