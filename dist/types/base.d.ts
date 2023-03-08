@@ -40,7 +40,7 @@ export type DateProp = {
     "#text": Text;
 };
 export type TotalPages = string;
-export type Total = string;
+export type Total = string | number;
 export type Page = string | number;
 export type Count = string | number;
 export type Limit = string | number;
@@ -48,6 +48,7 @@ export type TotalResults = string;
 export type StartIndex = string;
 export type ItemsPerPage = string;
 export type For = string;
+export type Reach = number;
 export type Image = {
     "#text": Text;
     size: "small" | "medium" | "large" | "extralarge" | "mega";
