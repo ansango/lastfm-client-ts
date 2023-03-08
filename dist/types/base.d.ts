@@ -49,6 +49,7 @@ export type StartIndex = string;
 export type ItemsPerPage = string;
 export type For = string;
 export type Reach = number;
+export type Loc = string;
 export type Image = {
     "#text": Text;
     size: "small" | "medium" | "large" | "extralarge" | "mega";
