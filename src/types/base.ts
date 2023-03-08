@@ -38,6 +38,8 @@ export type Rank = string;
 export type Text = string;
 export type Uts = string;
 
+export type Lang = string;
+
 export type DateProp = {
   uts: Uts;
   "#text": Text;
@@ -46,8 +48,14 @@ export type DateProp = {
 export type TotalPages = string;
 export type Total = string;
 export type Page = string | number;
-export type Count = string;
+export type Count = string | number;
 export type Limit = string | number;
+
+export type TotalResults = string;
+export type StartIndex = string;
+export type ItemsPerPage = string;
+
+export type For = string;
 
 export type Image = {
   "#text": Text;

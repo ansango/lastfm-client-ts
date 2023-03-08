@@ -20,7 +20,6 @@ export const method = {
     getWeeklyTrackChart: "user.getWeeklyTrackChart",
   },
   track: {
-    getCorrection: "track.getCorrection",
     getInfo: "track.getInfo",
     getSimilar: "track.getSimilar",
     getTags: "track.getTags",
