@@ -63,9 +63,6 @@ export type Track = {
   wiki: TrackWiki;
 };
 
-export type TrackGetCorrectionRequest = {};
-export type TrackGetCorrectionResponse = {};
-
 export type TrackGetInfoRequest = {};
 export type TrackGetInfoResponse = {};
 
